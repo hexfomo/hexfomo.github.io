@@ -29,6 +29,7 @@ body {
     flex: 1;
 }
 
+
 .buytab {
     margin-top: 30px;
     border: 1px solid;
@@ -77,6 +78,7 @@ body {
 
 .buybuy {
     float: left;
+    
 }
 
 .sellsell {
@@ -98,3 +100,40 @@ body {
     z-index: 5;
     background-color: rgba(000, 000, 000, 0.7);
 }
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+     background-image: url('images/bg.png');
+    border-top:1px dashed grey;
+    padding-top:5px;
+   color: white;
+   text-align: center;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .inst{
+        padding-left:100px
+    }
+  .buybuy {
+      
+    float:none;
+      
+      width:70%;
+      margin:auto;
+      margin-bottom:10px
+  }
+    .sellsell {
+     float:none;
+      
+      width:70%;
+      margin:auto;
+        
+  }
+}
+.push{
+    margin-bottom:300px;
+}
+ 
