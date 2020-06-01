@@ -129,13 +129,19 @@ function mainloop() {
         var amount = ((result))
          fastupdateGodTimer(amount);
     });
+      if ($('#trxEnabled').is(':checked')) { 
+    tronWeb.trx.getUnconfirmedBalance(tronWeb.defaultAddress['base58']).then(result => {
+        walletBal = result;
+        document.getElementById('walletApx').textContent = (tronWeb.fromSun(result)*1).toFixed(2);
+    });
+    } 
     
      Decker.totalDividendspaid().call().then(result => {
         var amount = ((result))
          document.getElementById("totalDividendspaid").textContent = (amount / 1e6).toFixed(2); 
     });
     
-    
+  
     
   if ($('#fragEnabled').is(':checked')) {
        tokenfrag.balanceOf(currentAddr).call().then(result => {
@@ -222,6 +228,10 @@ function mainloop() {
         var amount = ((result))
         document.getElementById("myTokens").textContent = (amount / 1e6).toFixed(2);
     });
+    
+    
+    
+    
     Decker.myDividends(currentAddr).call().then(result => {
         var amount = ((result))
 
@@ -232,11 +242,16 @@ function mainloop() {
             document.getElementById("datapx").textContent = (amount / 1e6).toFixed(2);
 
         } else if ($('#fragEnabledW').is(':checked')) {
-            var data2 = amount / 2.8;
+             Decker.fragPrice().call().then(result => {
+      var fragPrice = ((result)/1e6);
+         
+       var data2 = amount / fragPrice;
             document.getElementById("datapx").textContent = (data2 / 1e6).toFixed(2);
+    });
+            
 
         } else {
-            var data3 = amount / 3;
+            var data3 = amount / 4;
             document.getElementById("datapx").textContent = (data3 / 1e6).toFixed(2);
 
         }
