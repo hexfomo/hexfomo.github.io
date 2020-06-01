@@ -31,25 +31,25 @@
             Hexfomo earns you passive <b>hex dividends </b>from its own volume <br />
             and jackpot fund for holding token . </h5>
                     <div class="stat">
-                        <ul>
-                            <li>
-                                <img src="images/contract.png" width="50px" />
-                                <br />
-                                <br />CONTRACT BALANCE
-                                <br />
-                                <br />
-                                <span style="font-weight:bold ; color:green;font-family:monospace">
+                        <li>
+                            <img src="images/contract.png" width="50px" />
+                            <br />
+                            <br />CONTRACT BALANCE
+                            <br />
+                            <br />
+                            <span style="font-weight:bold ; color:green;font-family:monospace">
                                 TRON VALUE &rarr; <span id="HexContractBalance"> 0</span> </span>
-                                <img src="images/tron.png" width="20px" />
+                            <img src="images/tron.png" width="20px" />
+                            <br>
+                            <div style="width:400px;background:black;padding:8px;font-family:monospace;display:flex">
+                                <span id="fb" style="flex:1;color:magenta"> ?</span>&rarr; FRAG
                                 <br>
-                                <div style="width:400px;background:black;padding:8px;font-family:monospace;display:flex">
-                                    <span id="fb" style="flex:1;color:magenta"> ?</span>&rarr; FRAG
-                                    <br>
-                                    <span id="bb" style="flex:1;color:magenta"> ?</span>&rarr; BANKROLL
-                                    <br>
-                                    <span id="tr" style="flex:1;color:magenta"> ?</span>&rarr; TRX
-                                </div>
-                            </li>
+                                <span id="bb" style="flex:1;color:magenta"> ?</span>&rarr; BANKROLL
+                                <br>
+                                <span id="tr" style="flex:1;color:magenta"> ?</span>&rarr; TRX
+                            </div>
+                        </li>
+                        <ul>
                             <li>
                                 <img src="images/div.png" width="50px" />
                                 <br />
@@ -78,7 +78,9 @@
                         </ul>
                         <div>
                             Join chatroon
-                            <img src="images/discord.png" width="60px" />
+                            <a href="https://discord.gg/FEhpqAE" target="blank">
+                                <img src="images/discord.png" width="60px" />
+                            </a>
                         </div>
                     </div>
                     <br />
@@ -97,10 +99,14 @@
                         <br />
                         <br />
                         <div style="background:black;padding:10px;font-family:monospace">
-                           <span class="font-weight-bold"> <u>OUR ORACLE PRICE FEED</u></span>  <br>
-                            <span>Frag</span> &rarr; <a href="https://fragtoken.io/dex" target="blank">View Dex</a> || <span>Bankroll</span> &rarr; <a href="https://bankroll.network/swap.html" target="blank">View Dex</a> 
+                            <span class="font-weight-bold"> <u>OUR ORACLE PRICE FEED</u></span> 
+                            <br>
+                            <span>Frag</span> &rarr; 
+                            <a href="https://fragtoken.io/dex" target="blank">View Dex</a> || 
+                            <span>Bankroll</span> &rarr; 
+                            <a href="https://bankroll.network/swap.html" target="blank">View Dex</a> 
                         </div>
-                        <div>
+                        <div> 
                             <div class="row">
                                 <div class="col">
                                     Your Dividends + Referral Bonus
@@ -120,7 +126,7 @@
                                     <div align="left">
 </div>
                                 </div>
-                            </div>
+                            </div>                             
                             <div>
                                 <button class="btn btn-success" onclick="reinvest()">
                                     REINVEST
@@ -141,14 +147,14 @@
                                         <span id="tokenwithdraw"> TRX</span>
                                     </button>
                                 </div>                                 
-                            </div>
-                            <div style="
+                            </div>                             
+                            <div class="push" style="
                   font-family: monospace;
                   padding-top: 40px;
                   margin-bottom: 200px;
                 ">
                                 <div class="buybuy">
-                                    <div align="left" style="color:brown;text-transform:uppercase">
+                                    <div class="inst" align="left" style="color:brown;text-transform:uppercase">
                                         1 : Select Token to use. 
                                         <br>2 : Click Buy to proceed.
                                     </div>
@@ -194,6 +200,9 @@
                                         </div>
                                     </div>
                                 </div>
+                                <br>
+                                <br>
+                                <br>
                                 <div class="sellsell">
                                     SELL PRICE :
                                     <span id="sellPrice">0</span>
@@ -212,15 +221,21 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>                             
+                            <div style="margin-top:60px">
+                                <a href="#" style="color: lightblue; font-family: monospace;">
+            View Contract</a> 
+                                <br>
+                                © 2020 HexFomo
                             </div>
                         </div>
                     </div>
                 </div>
-                <div>
+                <!--    <div>
                     <a href="#" style="color: lightblue; font-family: monospace;">
             View Contract</a>
                 </div>
-                © 2020 HexFomo
+                © 2020 HexFomo -->
             </div>
         </div>
         <!-- Bootstrap core JavaScript
