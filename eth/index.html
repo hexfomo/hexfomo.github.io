@@ -118,8 +118,8 @@
                   padding-top: 40px;
                   margin-bottom: 200px;
                 ">
-                                <div class="buybuy">
-                                    <div class="floating" style="display:">
+                                <div class="buybuy" >
+                                    <div class="floating" style="display:none">
                                         <img src="images/fomohex.png" width="120px"> 
                                         <br>
                                         Ready to recieve dividend
@@ -134,7 +134,7 @@
                                     BUY PRICE :
                                     <span id="buyprice"> 0 </span>
                                     <img src="images/hextoken.png" width="20px" />
-                                    <div class="buytab">
+                                    <div class="buytab" style="height:auto">
                                         <label>Buy (Amount to
                                             <img src="images/hextoken.png" width="30px" /> to spend)
                                         </label>
@@ -145,6 +145,10 @@
                                                 <span id="estbuy"></span> HEMO
                                             </button>
                                         </div>
+                                        <div style="border-top:1px dashed;margin-top:2px;padding:10px;font-size:12px">
+                                           YOUR HEXBALANCE : <span id="wallet">?</span>  <img src="images/hextoken.png" width="20px" />  
+                                        </div>
+                                       
                                     </div>
                                 </div>
                                 <div class="sellsell">
@@ -1210,6 +1214,20 @@
           document.getElementById("sellPrice").textContent = sellPrice;
           // document.getElementById("getPotCost").textContent = getPotCost;
         });
+          
+           hexTokenContract.balanceOf.call(initialAccount,{}, function (err, result) {
+          if (err) return error(err);
+
+          //console.log(result.toNumber());
+          sellPrice = result.toNumber() / 1e8;
+          document.getElementById("wallet").textContent = sellPrice;
+          // document.getElementById("getPotCost").textContent = getPotCost;
+        });
+          
+          
+          
+          
+          
         fomo.myTokens.call({}, function (err, result) {
           if (err) return error(err);
 
