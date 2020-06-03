@@ -1,0 +1,1388 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Hexfomo - Earn divdend on you hex token</title>
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <!-- Custom styles for this template -->
+        <link href="style.css" rel="stylesheet" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+    </head>
+    <body>
+        <div class="container" align="center">
+            <div class="main">
+                <img src="images/fomohex.png" width="180px" />
+                <br />
+                <br />
+                <br />
+                <span id="intialAccount">Login to view you Address</span>
+                <div class="sub">
+                    You're going to invest, right?
+                    <br />
+                    <br />
+                    <h5 style="color: #ff3cbe;">
+            Hexfomo earns you passive <b>hex dividends </b>from its own volume <br />
+            and jackpot fund for holding token . </h5>
+                    <div class="stat">
+                        <ul>
+                            <li>
+                                <img src="images/contract.png" width="50px" />
+                                <br />
+                                <br />CONTRACT BALANCE
+                                <br />
+                                <br />
+                                <span id="totalEthereumBalance">0</span>
+                                <img src="images/hextoken.png" width="20px" />
+                            </li>
+                            <li>
+                                <img src="images/div.png" width="50px" />
+                                <br />
+                                <br />TOTAL PAID DIVIDENDS
+                                <br />
+                                <br />
+                                <span id="totalDividendspaid">0</span>
+                                <img src="images/hextoken.png" width="20px" />
+                            </li>
+                            <li>
+                                <img src="images/supply.png" width="50px" />
+                                <br />
+                                <br />TOTAL SUPPLY
+                                <br />
+                                <br />
+                                <span><span id="totalSupply">0</span> <img src="images/fomohex.png" width="20px" /></span>
+                            </li>
+                            <li>
+                                <img src="images/totalplayers.png" width="50px" />
+                                <br />
+                                <br />TOTAL PLAYERS
+                                <br />
+                                <br />
+                                <span id="totalPlayers">0</span> USERS
+                            </li>
+                        </ul>
+                        <div>
+                            Join chatroon
+                            <img src="images/discord.png" width="60px" />
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <h4 style="color: #ffd201; font-weight: bold;">
+            JACKPOT FUND </h4>
+                    <div class="mid" style="width: 90%; margin: auto; position: relative;">
+                        <h1 style="font-family: monospace; color: white;"> <span id="jackpotFund">0</span> <img src="images/hextoken.png" width="30px" /> </h1>
+                        <span>
+              Goes to &rarr; <span style="color: #1779ba;" id="potWinner">0x49320979B90BdF1a8010Be7d7262b4bEd588AE93</span>
+              in <span id="timer" style="color: #ffd201; font-weight: bold;">0 : 0: 0</span> </span>
+                        <div class="confirm" id="confirm">
+                            Waiting for transaction confirmation
+</div>
+                        <br />
+                        <br />
+                        <div>
+                            <div class="row">
+                                <div class="col">
+                                    Your Dividends + Referral Bonus
+                                    <div>
+                                        <br />
+                                        <h2> <span id="myDividends">0.00</span> <img src="images/hextoken.png" width="30px" /> </h2>
+                                        <div align="right">
+                                            <button class="btn btn-success" onclick="reinvest()">
+                                                REINVEST
+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    My Tokens
+                                    <div>
+                                        <br />
+                                        <h2> <span id="myTokens">0.0</span> <img src="images/fomohex.png" width="30px" /> </h2>
+                                    </div>
+                                    <div align="left">
+                                        <button class="btn btn-danger" onclick="withdraw()">
+                                            WITHDRAW
+</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="
+                  font-family: monospace;
+                  padding-top: 40px;
+                  margin-bottom: 200px;
+                ">
+                                <div class="buybuy">
+                                    <div class="floating" style="display:">
+                                        <img src="images/fomohex.png" width="120px"> 
+                                        <br>
+                                        Ready to recieve dividend
+                                        <br />
+                                        Click the button below to get started
+                                        <br />
+                                        <br />
+                                        <button class="btn btn-primary" onclick="approveHex()">
+                                            JOIN NOW
+</button>
+                                    </div>
+                                    BUY PRICE :
+                                    <span id="buyprice"> 0 </span>
+                                    <img src="images/hextoken.png" width="20px" />
+                                    <div class="buytab">
+                                        <label>Buy (Amount to
+                                            <img src="images/hextoken.png" width="30px" /> to spend)
+                                        </label>
+                                        <div class="buyaction">
+                                            <input type="number" id="buy" placeholder="AMOUNT OF HEX T0 SPEND" />
+                                            <button onclick="buy()">
+                                                Buy
+                                                <span id="estbuy"></span> HEMO
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="sellsell">
+                                    SELL PRICE :
+                                    <span id="sellPrice">0</span>
+                                    <img src="images/hextoken.png" width="20px" />
+                                    <div class="buytab">
+                                        <label style="border: 1px solid #ff3cbe;">Sell (Amount to
+                                            <img src="images/fomohex.png" width="30px" /> to spend)
+                                        </label>
+                                        <div class="buyaction">
+                                            <input type="number" id="sell" placeholder="AMOUNT OF HEMO T0 SPEND" />
+                                            <button onclick="sell()">
+                                                Sell
+                                                <span id=""></span> HEX
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <a href="https://etherscan.io/address/0xb1e2ef2ab0bddd4168638785804f6691d0c49cea#code" style="color: lightblue; font-family: monospace;">
+            View Contract</a>
+                </div>
+                © 2020 HexFomo
+            </div>
+        </div>
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+        <script src="js/hexToken_abi.js" type="text/javascript"></script>
+        <script>
+      var fomo;
+      var initialAccount;
+      var hex;
+      // var hexContractAddress = "0xc9c1c5583343944dba9bB72E5449854E72877D81";
+      var hexContractAddress = "0x2b591e99afE9f32eAA6214f7B7629768c40Eeb39";
+
+      var hexTokenContract;
+      window.addEventListener("load", async () => {
+        // Modern dapp browsers...
+        if (window.ethereum) {
+          //console.log("interface starting modern");
+          window.web3 = new Web3(ethereum);
+          try {
+            // Request account access if needed
+            await ethereum.enable();
+            // Acccounts now exposed
+            web3.eth.sendTransaction({
+              /* ... */
+            });
+          } catch (error) {
+            // User denied account access...
+          }
+        }
+        // Legacy dapp browsers...
+        else if (window.web3) {
+          //console.log("legacydapp");
+          window.web3 = new Web3(web3.currentProvider);
+          // Acccounts always exposed
+          web3.eth.sendTransaction({
+            /* ... */
+          });
+        }
+        // Non-dapp browsers...
+        else {
+          alert(
+            "please ensure https://metamask.io/ is installed and connected "
+          );
+          web3 = new Web3("wss://rinkeby.infura.io/ws");
+          //console.log(
+          //  "Non-Ethereum browser detected. You should consider trying MetaMask!"
+         // );
+        }
+
+        //-----------------------------------------------------------------------------------------------------------------------
+
+        var tokensample = [
+          {
+            inputs: [],
+            payable: false,
+            stateMutability: "nonpayable",
+            type: "constructor",
+          },
+          {
+            anonymous: false,
+            inputs: [
+              {
+                indexed: true,
+                internalType: "address",
+                name: "tokenOwner",
+                type: "address",
+              },
+              {
+                indexed: true,
+                internalType: "address",
+                name: "spender",
+                type: "address",
+              },
+              {
+                indexed: false,
+                internalType: "uint256",
+                name: "tokens",
+                type: "uint256",
+              },
+            ],
+            name: "Approval",
+            type: "event",
+          },
+          {
+            constant: false,
+            inputs: [
+              {
+                internalType: "address",
+                name: "delegate",
+                type: "address",
+              },
+              {
+                internalType: "uint256",
+                name: "numTokens",
+                type: "uint256",
+              },
+            ],
+            name: "approve",
+            outputs: [
+              {
+                internalType: "bool",
+                name: "",
+                type: "bool",
+              },
+            ],
+            payable: false,
+            stateMutability: "nonpayable",
+            type: "function",
+          },
+          {
+            constant: false,
+            inputs: [
+              {
+                internalType: "address",
+                name: "receiver",
+                type: "address",
+              },
+              {
+                internalType: "uint256",
+                name: "numTokens",
+                type: "uint256",
+              },
+            ],
+            name: "transfer",
+            outputs: [
+              {
+                internalType: "bool",
+                name: "",
+                type: "bool",
+              },
+            ],
+            payable: false,
+            stateMutability: "nonpayable",
+            type: "function",
+          },
+          {
+            anonymous: false,
+            inputs: [
+              {
+                indexed: true,
+                internalType: "address",
+                name: "from",
+                type: "address",
+              },
+              {
+                indexed: true,
+                internalType: "address",
+                name: "to",
+                type: "address",
+              },
+              {
+                indexed: false,
+                internalType: "uint256",
+                name: "tokens",
+                type: "uint256",
+              },
+            ],
+            name: "Transfer",
+            type: "event",
+          },
+          {
+            constant: false,
+            inputs: [
+              {
+                internalType: "address",
+                name: "owner",
+                type: "address",
+              },
+              {
+                internalType: "address",
+                name: "buyer",
+                type: "address",
+              },
+              {
+                internalType: "uint256",
+                name: "numTokens",
+                type: "uint256",
+              },
+            ],
+            name: "transferFrom",
+            outputs: [
+              {
+                internalType: "bool",
+                name: "",
+                type: "bool",
+              },
+            ],
+            payable: false,
+            stateMutability: "nonpayable",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [
+              {
+                internalType: "address",
+                name: "owner",
+                type: "address",
+              },
+              {
+                internalType: "address",
+                name: "delegate",
+                type: "address",
+              },
+            ],
+            name: "allowance",
+            outputs: [
+              {
+                internalType: "uint256",
+                name: "",
+                type: "uint256",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [
+              {
+                internalType: "address",
+                name: "tokenOwner",
+                type: "address",
+              },
+            ],
+            name: "balanceOf",
+            outputs: [
+              {
+                internalType: "uint256",
+                name: "",
+                type: "uint256",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [],
+            name: "decimals",
+            outputs: [
+              {
+                internalType: "uint8",
+                name: "",
+                type: "uint8",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [],
+            name: "name",
+            outputs: [
+              {
+                internalType: "string",
+                name: "",
+                type: "string",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [],
+            name: "symbol",
+            outputs: [
+              {
+                internalType: "string",
+                name: "",
+                type: "string",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [],
+            name: "totalSupply",
+            outputs: [
+              {
+                internalType: "uint256",
+                name: "",
+                type: "uint256",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+        ];
+
+        //--------------------------------------------------------------------------------------------------------------------------
+
+        var hexfomo = [
+          {
+            constant: true,
+            inputs: [
+              {
+                name: "_customerAddress",
+                type: "address",
+              },
+            ],
+            name: "dividendsOf",
+            outputs: [
+              {
+                name: "",
+                type: "uint256",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [],
+            name: "name",
+            outputs: [
+              {
+                name: "",
+                type: "string",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [
+              {
+                name: "",
+                type: "address",
+              },
+            ],
+            name: "isPlayer",
+            outputs: [
+              {
+                name: "",
+                type: "bool",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [
+              {
+                name: "_hexToSpend",
+                type: "uint256",
+              },
+            ],
+            name: "calculateTokensReceived",
+            outputs: [
+              {
+                name: "",
+                type: "uint256",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [],
+            name: "totalSupply",
+            outputs: [
+              {
+                name: "",
+                type: "uint256",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [],
+            name: "potWinner",
+            outputs: [
+              {
+                name: "",
+                type: "address",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [],
+            name: "onlyAmbassadors",
+            outputs: [
+              {
+                name: "",
+                type: "bool",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [],
+            name: "decimals",
+            outputs: [
+              {
+                name: "",
+                type: "uint8",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [
+              {
+                name: "",
+                type: "bytes32",
+              },
+            ],
+            name: "administrators",
+            outputs: [
+              {
+                name: "",
+                type: "bool",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: false,
+            inputs: [],
+            name: "withdraw",
+            outputs: [],
+            payable: false,
+            stateMutability: "nonpayable",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [
+              {
+                name: "_tokensToSell",
+                type: "uint256",
+              },
+            ],
+            name: "calculateHexReceived",
+            outputs: [
+              {
+                name: "",
+                type: "uint256",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [],
+            name: "hexToken",
+            outputs: [
+              {
+                name: "",
+                type: "address",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [],
+            name: "sellPrice",
+            outputs: [
+              {
+                name: "",
+                type: "uint256",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [],
+            name: "stakingRequirement",
+            outputs: [
+              {
+                name: "",
+                type: "uint256",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [
+              {
+                name: "_includeReferralBonus",
+                type: "bool",
+              },
+            ],
+            name: "myDividends",
+            outputs: [
+              {
+                name: "",
+                type: "uint256",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [
+              {
+                name: "_customerAddress",
+                type: "address",
+              },
+            ],
+            name: "balanceOf",
+            outputs: [
+              {
+                name: "",
+                type: "uint256",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: false,
+            inputs: [
+              {
+                name: "_amountOfTokens",
+                type: "uint256",
+              },
+            ],
+            name: "setStakingRequirement",
+            outputs: [],
+            payable: false,
+            stateMutability: "nonpayable",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [],
+            name: "buyPrice",
+            outputs: [
+              {
+                name: "",
+                type: "uint256",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: false,
+            inputs: [
+              {
+                name: "_identifier",
+                type: "bytes32",
+              },
+              {
+                name: "_status",
+                type: "bool",
+              },
+            ],
+            name: "setAdministrator",
+            outputs: [],
+            payable: false,
+            stateMutability: "nonpayable",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [],
+            name: "totalDividendspaid",
+            outputs: [
+              {
+                name: "",
+                type: "uint256",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [],
+            name: "myTokens",
+            outputs: [
+              {
+                name: "",
+                type: "uint256",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [],
+            name: "symbol",
+            outputs: [
+              {
+                name: "",
+                type: "string",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: false,
+            inputs: [],
+            name: "disableInitialStage",
+            outputs: [],
+            payable: false,
+            stateMutability: "nonpayable",
+            type: "function",
+          },
+          {
+            constant: false,
+            inputs: [
+              {
+                name: "_toAddress",
+                type: "address",
+              },
+              {
+                name: "_amountOfTokens",
+                type: "uint256",
+              },
+            ],
+            name: "transfer",
+            outputs: [
+              {
+                name: "",
+                type: "bool",
+              },
+            ],
+            payable: false,
+            stateMutability: "nonpayable",
+            type: "function",
+          },
+          {
+            constant: false,
+            inputs: [
+              {
+                name: "_symbol",
+                type: "string",
+              },
+            ],
+            name: "setSymbol",
+            outputs: [],
+            payable: false,
+            stateMutability: "nonpayable",
+            type: "function",
+          },
+          {
+            constant: false,
+            inputs: [
+              {
+                name: "_name",
+                type: "string",
+              },
+            ],
+            name: "setName",
+            outputs: [],
+            payable: false,
+            stateMutability: "nonpayable",
+            type: "function",
+          },
+          {
+            constant: false,
+            inputs: [
+              {
+                name: "hexIn1",
+                type: "uint256",
+              },
+            ],
+            name: "buy",
+            outputs: [
+              {
+                name: "",
+                type: "uint256",
+              },
+            ],
+            payable: true,
+            stateMutability: "payable",
+            type: "function",
+          },
+          {
+            constant: false,
+            inputs: [
+              {
+                name: "_amountOfTokens",
+                type: "uint256",
+              },
+            ],
+            name: "sell",
+            outputs: [],
+            payable: false,
+            stateMutability: "nonpayable",
+            type: "function",
+          },
+          {
+            constant: false,
+            inputs: [],
+            name: "exit",
+            outputs: [],
+            payable: false,
+            stateMutability: "nonpayable",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [],
+            name: "potTime",
+            outputs: [
+              {
+                name: "",
+                type: "uint256",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [],
+            name: "jackpotFund",
+            outputs: [
+              {
+                name: "",
+                type: "uint256",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [],
+            name: "totalhexBalance",
+            outputs: [
+              {
+                name: "",
+                type: "uint256",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: true,
+            inputs: [],
+            name: "totalPlayers",
+            outputs: [
+              {
+                name: "",
+                type: "uint256",
+              },
+            ],
+            payable: false,
+            stateMutability: "view",
+            type: "function",
+          },
+          {
+            constant: false,
+            inputs: [],
+            name: "claimPot",
+            outputs: [],
+            payable: false,
+            stateMutability: "nonpayable",
+            type: "function",
+          },
+          {
+            constant: false,
+            inputs: [],
+            name: "reinvest",
+            outputs: [],
+            payable: false,
+            stateMutability: "nonpayable",
+            type: "function",
+          },
+          {
+            inputs: [],
+            payable: false,
+            stateMutability: "nonpayable",
+            type: "constructor",
+          },
+          {
+            payable: true,
+            stateMutability: "payable",
+            type: "fallback",
+          },
+          {
+            anonymous: false,
+            inputs: [
+              {
+                indexed: true,
+                name: "customerAddress",
+                type: "address",
+              },
+              {
+                indexed: false,
+                name: "incominghex",
+                type: "uint256",
+              },
+              {
+                indexed: false,
+                name: "tokensMinted",
+                type: "uint256",
+              },
+              {
+                indexed: true,
+                name: "referredBy",
+                type: "address",
+              },
+            ],
+            name: "onTokenPurchase",
+            type: "event",
+          },
+          {
+            anonymous: false,
+            inputs: [
+              {
+                indexed: true,
+                name: "customerAddress",
+                type: "address",
+              },
+              {
+                indexed: false,
+                name: "tokensBurned",
+                type: "uint256",
+              },
+              {
+                indexed: false,
+                name: "hexEarned",
+                type: "uint256",
+              },
+            ],
+            name: "onTokenSell",
+            type: "event",
+          },
+          {
+            anonymous: false,
+            inputs: [
+              {
+                indexed: true,
+                name: "customerAddress",
+                type: "address",
+              },
+              {
+                indexed: false,
+                name: "hexReinvested",
+                type: "uint256",
+              },
+              {
+                indexed: false,
+                name: "tokensMinted",
+                type: "uint256",
+              },
+            ],
+            name: "onReinvestment",
+            type: "event",
+          },
+          {
+            anonymous: false,
+            inputs: [
+              {
+                indexed: true,
+                name: "customerAddress",
+                type: "address",
+              },
+              {
+                indexed: false,
+                name: "hexWithdrawn",
+                type: "uint256",
+              },
+            ],
+            name: "onWithdraw",
+            type: "event",
+          },
+          {
+            anonymous: false,
+            inputs: [
+              {
+                indexed: true,
+                name: "from",
+                type: "address",
+              },
+              {
+                indexed: true,
+                name: "to",
+                type: "address",
+              },
+              {
+                indexed: false,
+                name: "tokens",
+                type: "uint256",
+              },
+            ],
+            name: "Transfer",
+            type: "event",
+          },
+        ];
+        var hexFomoContract = "0xB1E2ef2AB0BdDD4168638785804F6691d0C49Cea";
+
+        fomo = web3.eth.contract(hexfomo).at(hexFomoContract);
+        // hexTokenContract = web3.eth.contract(hexTokenAbi.abi).at(hexContractAddress);
+        hexTokenContract = web3.eth
+          .contract(tokensample)
+          .at(hexContractAddress);
+
+        //  = web3.eth.Contract(hexTokenAbi.abi, hexContractAddress);
+        //console.log("hexTokenContract", hexTokenContract);
+        initialAccount = web3.eth.defaultAccount;
+        document.getElementById("intialAccount").textContent =
+          "Your Address " + initialAccount;
+        window.setInterval(function () {
+          main();
+          if (web3.eth.defaultAccount !== initialAccount) {
+            window.location.reload();
+          }
+        }, 500);
+
+        //console.log("Default Acc", initialAccount);
+        //console.log("Contract", fomo);
+      });
+
+      var buyprice = 0;
+      var sellprice = 0;
+      var tp;
+      var hp;
+      function main() {
+        fomo.buyPrice.call({}, function (err, result) {
+          if (err) return error(err);
+
+          //console.log(result.toNumber());
+          buyprice = result.toNumber();
+          document.getElementById("buyprice").textContent = buyprice / 1e14;
+          // document.getElementById("getPotCost").textContent = getPotCost;
+        });
+
+        fomo.totalPlayers.call({}, function (err, result) {
+          if (err) return error(err);
+
+          //console.log(result.toNumber());
+          totalPlayers = result.toNumber();
+          document.getElementById("totalPlayers").textContent = totalPlayers;
+          // document.getElementById("getPotCost").textContent = getPotCost;
+        });
+
+        fomo.calculateTokensReceived.call(1e18, {}, function (err, result) {
+          if (err) return error(err);
+
+          //console.log(result.toNumber());
+          hp = result.toNumber();
+          //  document.getElementById("sellPrice").textContent = sellPrice;
+          // document.getElementById("getPotCost").textContent = getPotCost;
+        });
+
+
+         hexTokenContract.allowance.call(initialAccount, '0xB1E2ef2AB0BdDD4168638785804F6691d0C49Cea', {}, function (err, result) {
+          if (err) return error(err);
+
+        console.log('awl',result.toNumber());
+          hp = result.toNumber();
+          if(hp > 1e8){
+               $(".floating").hide();           
+          }
+          else{
+                        $(".floating").show();  
+          }
+          //  document.getElementById("sellPrice").textContent = sellPrice;
+          // document.getElementById("getPotCost").textContent = getPotCost;
+        });
+        fomo.calculateHexReceived.call(1e18, {}, function (err, result) {
+          if (err) return error(err);
+
+          //console.log(result.toNumber());
+          tp = result.toNumber();
+          //  document.getElementById("sellPrice").textContent = sellPrice;
+          // document.getElementById("getPotCost").textContent = getPotCost;
+        });
+
+        fomo.sellPrice.call({}, function (err, result) {
+          if (err) return error(err);
+
+          //console.log(result.toNumber());
+          sellPrice = result.toNumber() / 1e14;
+          document.getElementById("sellPrice").textContent = sellPrice;
+          // document.getElementById("getPotCost").textContent = getPotCost;
+        });
+        fomo.myTokens.call({}, function (err, result) {
+          if (err) return error(err);
+
+          //console.log(result.toNumber());
+          myTokens = result.toNumber() / 1e14;
+          document.getElementById("myTokens").textContent = myTokens.toFixed(0);
+          // document.getElementById("getPotCost").textContent = getPotCost;
+        });
+
+        fomo.totalDividendspaid.call({}, function (err, result) {
+          if (err) return error(err);
+
+          //console.log(result.toNumber());
+          totalDividendspaid = result.toNumber() / 1e8;
+          document.getElementById(
+            "totalDividendspaid"
+          ).textContent = totalDividendspaid.toFixed(2);
+          // document.getElementById("getPotCost").textContent = getPotCost;
+        });
+        fomo.jackpotFund.call({}, function (err, result) {
+          if (err) return error(err);
+
+          //console.log(result.toNumber());
+          jackpotFund = result.toNumber() / 1e18;
+          document.getElementById(
+            "jackpotFund"
+          ).textContent = jackpotFund.toFixed(2);
+          // document.getElementById("getPotCost").textContent = getPotCost;
+        });
+
+        fomo.potWinner.call({}, function (err, result) {
+          if (err) return error(err);
+          //console.log(result);
+          potWinner = result.toString();
+          document.getElementById("potWinner").textContent = potWinner;
+          // document.getElementById("getPotCost").textContent = getPotCost;
+        });
+
+        fomo.potTime.call({}, function (err, result) {
+          if (err) return error(err);
+
+          //console.log(result.toNumber());
+          potTime = result.toNumber();
+          cooldowntimer(potTime);
+        });
+
+        fomo.totalSupply.call({}, function (err, result) {
+          if (err) return error(err);
+
+          //console.log(result.toNumber());
+          totalSupply = result.toNumber() / 1e14;
+          document.getElementById(
+            "totalSupply"
+          ).textContent = totalSupply.toFixed(0);
+          // document.getElementById("getPotCost").textContent = getPotCost;
+        });
+        fomo.totalhexBalance.call({}, function (err, result) {
+          if (err) return error(err);
+
+          //console.log(result.toNumber());
+          totalEthereumBalance = result.toNumber() / 1e8;
+          document.getElementById(
+            "totalEthereumBalance"
+          ).textContent = totalEthereumBalance.toFixed(2);
+          // document.getElementById("getPotCost").textContent = getPotCost;
+        });
+
+        fomo.myDividends.call(true, {}, function (err, result) {
+          if (err) return error(err);
+
+          //console.log(result.toNumber());
+          myDividends = result.toNumber() / 1e8;
+          document.getElementById(
+            "myDividends"
+          ).textContent = myDividends.toFixed(2);
+          // document.getElementById("getPotCost").textContent = getPotCost;
+        });
+      }
+      $("#buy").on("keyup input", function () {
+        var amt = document.getElementById("buy").value;
+        var data = amt * 1e18;
+        var buyest = (data * hp) / 1e18;
+        document.getElementById("").textContent = (buyest / 1e18).toFixed(
+          2
+        );
+      });
+
+      function approveHex() {
+        var data = 100000000000000*1e8;
+        var hexFomoContract = "0xB1E2ef2AB0BdDD4168638785804F6691d0C49Cea";
+        hexTokenContract.approve.sendTransaction(
+          hexFomoContract,
+          data,
+          {
+            from: initialAccount,
+          },
+          function () {}
+        );
+      }
+      $("#sell").on("keyup input", function () {
+        var amt = document.getElementById("sell").value;
+        var data = amt * 1e14;
+        var myDividends = (data * sellPrice) / 1e14;
+        document.getElementById("estsell").textContent = myDividends.toFixed(2);
+      });
+
+      var a_godTimer = "";
+      var godtimer_in_seconds = 0;
+      var god_numhours = 0;
+      var god_numminutes = 0;
+      var god_numseconds = 0;
+
+      var god_roundover = false;
+      var godtimer_lastminute = 300;
+      var i_godTimer = true;
+
+      function cooldowntimer(data) {
+        if (i_godTimer == true) {
+          var _blocktime = new Date().getTime(); //current "blocktime" in milliseconds
+          var _timer = data - _blocktime / 1000;
+
+          //   if (_timer > 0) {
+          godtimer_lastminute = 0;
+          var _hours = Math.floor(_timer / 3600);
+          if (_hours < 10) {
+            _hours = "0" + _hours;
+          }
+          var _minutes = Math.floor((_timer % 3600) / 60);
+          if (_minutes < 10) {
+            _minutes = "0" + _minutes;
+          }
+          var _seconds = parseFloat((_timer % 3600) % 60).toFixed(0);
+          if (_seconds < 10) {
+            _seconds = "0" + _seconds;
+          }
+
+          document.getElementById("timer").innerHTML =
+            _hours + " hrs : " + _minutes + " mins : " + _seconds + " sec ";
+        }
+      }
+
+      // Prevent the browser from POSTing the form.
+      function reinvest() {
+        fomo.reinvest.sendTransaction({}, function () {});
+      }
+      function withdraw() {
+        fomo.withdraw.sendTransaction({}, function () {});
+      }
+
+      function buy() {
+        var numberOfTokens = document.getElementById("buy").value;
+        //console.log("number", numberOfTokens * 1e18);
+        var amount = numberOfTokens * 1e8;
+
+        fomo.buy.sendTransaction(amount, {}, function () {
+          $("#confirm").show().delay(10000).hide(0);
+        });
+      }
+      function sell() {
+        var numberOfTokensell = document.getElementById("sell").value;
+        //console.log("number", numberOfTokensell * 1e14);
+        var tokento = numberOfTokensell * 1e14;
+        fomo.sell.sendTransaction(
+          tokento,
+          {
+            value: 0,
+          },
+          function () {
+            // Nothing to do here. If the transaction is successful, it will trigger
+            // events that we're already monitoring.
+          }
+        );
+      }
+    </script>
+    </body>
+</html>
