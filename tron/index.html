@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Hexfomo - Earn divdend on you hex token</title>
+        <!-- Bootstrap core CSS -->
+        <link href="bootstrap/css/bootstrap.css" rel="stylesheet" />
+        <!-- Custom styles for this template -->
+        <link href="style.css" rel="stylesheet" />
+        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous" />
+    </head>
+    <body>
+        <div class="container" align="center">
+            <div class="main">
+                <img src="images/fomohex.png" width="180px" />
+                <br />
+                <br />
+                <br />
+                <span id="intialAccount">Login to view you Address</span>
+                <div class="sub">
+                    You're going to invest, right?
+                    <br />
+                    <br />
+                    <h5 style="color: #ff3cbe;">
+            Hexfomo earns you passive <b>hex dividends </b>from its own volume <br />
+            and jackpot fund for holding token . </h5>
+                    <div class="stat">
+                        <li>
+                            <img src="images/contract.png" width="50px" />
+                            <br />
+                            <br />CONTRACT BALANCE
+                            <br />
+                            <br />
+                            <span style="font-weight:bold ; color:green;font-family:monospace">
+                                TRON VALUE &rarr; <span id="HexContractBalance"> 0</span> </span>
+                            <img src="images/tron.png" width="20px" />
+                            <br>
+                            <div style="width:400px;background:black;padding:8px;font-family:monospace;display:flex">
+                                <span id="fb" style="flex:1;color:magenta"> ?</span>&rarr; FRAG
+                                <br>
+                                <span id="bb" style="flex:1;color:magenta"> ?</span>&rarr; BANKROLL
+                                <br>
+                                <span id="tr" style="flex:1;color:magenta"> ?</span>&rarr; TRX
+                            </div>
+                        </li>
+                        <ul>
+                            <li>
+                                <img src="images/div.png" width="50px" />
+                                <br />
+                                <br />TOTAL PAID DIVIDENDS
+                                <br />
+                                <br />
+                                <span id="totalDividendspaid">0</span>
+                                <img src="images/tron.png" width="20px" />
+                            </li>
+                            <li>
+                                <img src="images/supply.png" width="50px" />
+                                <br />
+                                <br />TOTAL SUPPLY
+                                <br />
+                                <br />
+                                <span><span id="totalSupply">0</span> <img src="images/fomohex.png" width="20px" /></span>
+                            </li>
+                            <li>
+                                <img src="images/totalplayers.png" width="50px" />
+                                <br />
+                                <br />TOTAL PLAYERS
+                                <br />
+                                <br />
+                                <span id="totalPlayers">0</span> USERS
+                            </li>
+                        </ul>
+                        <div>
+                            Join chatroon
+                            <a href="https://discord.gg/FEhpqAE" target="blank">
+                                <img src="images/discord.png" width="60px" />
+                            </a>
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <h4 style="color: #ffd201; font-weight: bold;">
+            JACKPOT FUND </h4>
+                    ( Goes To Last Buyer)
+                    <div class="mid" style="width: 90%; margin: auto; position: relative;">
+                        <h1 style="font-family: monospace; color: white;"> <span id="jackpotFund">0</span> <img src="images/tron.png" width="30px" /> </h1>
+                        <span>
+              Goes to &rarr; <span style="color: #1779ba;" id="potWinner">0x49320979B90BdF1a8010Be7d7262b4bEd588AE93</span>
+              in <span id="timer" style="color: #ffd201; font-weight: bold;">0 : 0: 0</span> </span>
+                        <div class="confirm" id="confirm">
+                            Waiting for transaction confirmation
+</div>
+                        <br />
+                        <br />
+                        <div style="background:black;padding:10px;font-family:monospace">
+                            <span class="font-weight-bold"> <u>OUR ORACLE PRICE FEED</u></span> 
+                            <br>
+                            <span>Frag</span> &rarr; 
+                            <a href="https://fragtoken.io/dex" target="blank">View Dex</a> || 
+                            <span>Bankroll</span> &rarr; 
+                            <a href="https://bankroll.network/swap.html" target="blank">View Dex</a> 
+                        </div>
+                        <div> 
+                            <div class="row">
+                                <div class="col">
+                                    Your Dividends + Referral Bonus
+                                    <div>
+                                        <br />
+                                        <h2> <span id="myDividends">0.00</span> <img src="images/tron.png" width="30px" /> </h2>
+                                        <div align="right">
+</div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    My Tokens
+                                    <div>
+                                        <br />
+                                        <h2> <span id="myTokens">0.0</span> <img src="images/fomohex.png" width="30px" /> </h2>
+                                    </div>
+                                    <div align="left">
+</div>
+                                </div>
+                            </div>                             
+                            <div>
+                                <button class="btn btn-success" onclick="reinvest()">
+                                    REINVEST
+</button>
+                                <br> 
+                                <br>
+                                <div style="color:lightgrey;font-family:monospace">
+                                    SELECT TOKEN TO WITHDRAW WITH 
+                                    <br>
+                                    <br>
+                                    <input type="checkbox" id="trxEnabledW" checked> TRX  &nbsp 
+                                    <input type="checkbox" id="fragEnabledW"> FRAG &nbsp
+                                    <input type="checkbox" id="bankrEnabledW"> BNKR &nbsp  
+                                    <br>
+                                    <button class="btn btn-danger" onclick="withdraw()">
+                                        WITHDRAW 
+                                        <span id="datapx">?</span>
+                                        <span id="tokenwithdraw"> TRX</span>
+                                    </button>
+                                </div>                                 
+                            </div>                             
+                            <div class="push" style="
+                  font-family: monospace;
+                  padding-top: 40px;
+                  margin-bottom: 200px;
+                ">
+                                <div class="buybuy">
+                                    <div class="inst" align="left" style="color:brown;text-transform:uppercase">
+                                        1 : Select Token to use. 
+                                        <br>2 : Click Buy to proceed.
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="floating" style="display:none">
+                                        <img src="images/fomohex.png" width="120px"> 
+                                        <br>
+                                        Ready to recieve dividend
+                                        <br />
+                                        Click the button below to get started
+                                        <br />
+                                        <br />
+                                        <button class="btn btn-primary" onclick="approveHex()">
+                                            JOIN NOW
+</button>
+                                    </div>
+                                    BUY PRICE :
+                                    <span id="buyprice"> 0 </span>
+                                    <img src="images/tron.png" width="20px" />
+                                    <div class="buytab" style="height:auto">
+                                        <label> BUY WITH 
+                                            <input type="checkbox" id="trxEnabled" checked> TRX  
+                                            <input type="checkbox" id="fragEnabled"> FRAG 
+                                            <input type="checkbox" id="bankrEnabled"> BNKR
+                                        </label>
+                                        <div class="buyaction buyaction2">
+                                            <input type="number" id="buy" placeholder="AMOUNT OF TRX T0 SPEND" />
+                                            <button onclick="buy()" class="btn btn-primary">
+                                                Buy
+                                                <span id="estbuy"></span> 
+                                                <img src="images/fomohex.png" width="20px" />
+                                            </button>                                             
+                                        </div>
+                                        <div class="act" style="display:none;padding:20px;padding-top:40px">
+                                            <button class="btn btn-primary" style="" onclick="approve()"> 
+                                                ACTIVATE  NOW
+</button>
+                                        </div>
+                                        <div class="wtab" style="color:lightgrey;border-top: 1px dotted;margin-top:2px;padding: 3px">
+                                            WALLET BALANCE : 
+                                            <span style="color:green"> <span id="walletApx">?</span> <span id="tn">TRON</span> </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="sellsell">
+                                    SELL PRICE :
+                                    <span id="sellPrice">0</span>
+                                    <img src="images/tron.png" width="20px" />
+                                    <div class="buytab" style="height:110px">
+                                        <label style="border: 1px solid #ff3cbe;">Sell (Amount to
+                                            <img src="images/fomohex.png" width="30px" /> to spend)
+                                        </label>
+                                        <div class="buyaction">
+                                            <input type="number" id="sell" placeholder="AMOUNT OF HEMO T0 SPEND" />
+                                            <button onclick="sell()" class="btn btn-danger">
+                                                Sell
+                                                <span id=""></span> 
+                                                <img src="images/fomohex.png" width="20px" />
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>                             
+                            <div style="margin-top:60px">
+                                <a href="#" style="color: lightblue; font-family: monospace;">
+            View Contract</a> 
+                                <br>
+                                © 2020 HexFomo
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--    <div>
+                    <a href="#" style="color: lightblue; font-family: monospace;">
+            View Contract</a>
+                </div>
+                © 2020 HexFomo -->
+            </div>
+        </div>
+        <!-- Bootstrap core JavaScript
+    ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.js"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="assets/js/ie10-viewport-bug-workaround.js"></script>
+        <script src="tron.js"></script>
+    </body>
+</html>
